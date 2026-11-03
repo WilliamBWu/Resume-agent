@@ -1,0 +1,36 @@
+---
+description: 简历 Agent 总则 — 目录边界、禁止编造、默认 skills
+alwaysApply: true
+---
+
+# 简历 Agent 总则
+
+## 目录
+
+- 原材料：`inbox/`（完成后归档到 `inbox/processed/YYYY-MM-DD/`）
+- 真相源：`data/master/`（profile / experience / projects / CHANGELOG）
+- 岗位版：`data/versions/<slug>/`（可丢弃重生成）
+- 条目约定：`data/master/SCHEMA.md`
+
+## 硬禁止
+
+- 禁止编造用户材料中未出现的公司、职位、时间、奖项与无法圆场的业绩数字
+- 禁止把 `data/versions/` 的改写结果回写 `data/master/`
+- 禁止在不确定是否同一条目时静默合并（标记 pending_confirm 并提问）
+
+## 岗位版结构（详见 `resume-tailor.mdc`）
+
+默认顺序：教育背景 → 实习经历 → 项目经历 → 校园经历 → 个人亮点与技能（末栏合并）。教育荣誉/课程分行；课程按 JD 从成绩库选列；项目用「粗体简介 + 详述」，成果无奖项时写评价指标；不做「跟随师兄」「组会分享」等弱化表述。
+
+## 默认 Skills
+
+- Word：`anthropics/skills` 的 `docx`
+- PDF：`anthropics/skills` 的 `pdf`
+- 岗位适配：`composiohq/awesome-claude-skills` 的 `tailored-resume-generator`
+- 可选 JD 分析：`paramchoudhary/resumeskills` 的 `job-description-analyzer`
+- 可选 ATS：`paramchoudhary/resumeskills` 的 `resume-ats-optimizer`
+- 可选中文 OCR：`claude-office-skills` 的 `smart-ocr`
+
+## 语言
+
+与用户沟通使用简体中文。

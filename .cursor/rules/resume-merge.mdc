@@ -1,0 +1,26 @@
+---
+description: master 合并冲突、对话增量更新、CHANGELOG
+globs:
+  - data/master/**
+---
+
+# 合并与增量更新
+
+## 材料合并
+
+- 同一实体（名称 + 时间重叠 + 或相同 id）：以用户最新材料为准更新正文与元数据
+- 仅补充细节：合并进同一 `id`，不新建重复条
+- 不确定：`status: pending_confirm`，先问用户
+
+## 对话增量
+
+- 用户口述补充只改对应 `id` 条目
+- 找不到目标条目时列出候选或请用户指定，不新建模糊条目
+
+## CHANGELOG
+
+每次写入 master 后，在 `data/master/CHANGELOG.md` 表顶追加一行：
+
+`| YYYY-MM-DD | <文件名或对话摘要> | <改动了哪些 id/章节> |`
+
+并更新对应文件文档级 `updated` 字段。

@@ -1,0 +1,8 @@
+{
+  "name": "resume-agent",
+  "private": true,
+  "description": "Cursor-based resume knowledge base + rules-driven agent (template)",
+  "dependencies": {
+    "docx": "^9.7.1"
+  }
+}

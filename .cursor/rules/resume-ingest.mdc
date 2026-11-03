@@ -1,0 +1,15 @@
+---
+description: 将 inbox 或附件中的 Word/PDF/图片/项目文件抽取并准备合并进 master
+globs:
+  - inbox/**
+  - data/master/**
+---
+
+# 入库流程
+
+1. 识别类型：`.docx`→docx skill；`.pdf`→pdf skill；图片→先原生读图，失败再 smart-ocr；README/设计说明等→抽取「做什么/技术栈/结果」
+2. 归类：基本信息/教育/技能→`profile.md`；工作实习→`experience.md`；项目→`projects.md`
+3. **成绩单 / 课程表**：写入 `profile.md`「教育经历」下的课程与成绩表（课名、分数、学期若有）；供岗位版按 JD 选课（含 Python 等编程课）。分数以材料为准，不估算。
+4. 按 `SCHEMA.md` 生成或更新条目块（保持已有 `id`）
+5. 调用合并规则处理冲突后，将源文件移到 `inbox/processed/YYYY-MM-DD/`
+6. 无法解析：文件留在 inbox，向用户说明原因，不写入可疑片段

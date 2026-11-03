@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.superpowers/
+node_modules/
+package-lock.json
+.DS_Store
+Thumbs.db
+
+# Local personal materials — keep private; never commit real PII
+inbox/**
+!inbox/.gitkeep
+!inbox/processed/
+inbox/processed/**
+!inbox/processed/.gitkeep
+
+data/master/assets/**
+!data/master/assets/.gitkeep
+
+# Generated tailored resumes (may contain personal info)
+data/versions/**
+!data/versions/INDEX.md
+!data/versions/.gitkeep
+!data/versions/demo-ops-intern-2026/
+!data/versions/demo-ops-intern-2026/**
+
+# Optional: if you replace demo master with your own, keep a private fork
+# and do not push real profile/experience to a public remote.
